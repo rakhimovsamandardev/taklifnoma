@@ -1,0 +1,28 @@
+# Senior Architect Rules for Node.js Telegram Bot
+
+## Efficiency & Token Saving
+- NEVER rewrite an entire file. Only provide MINIMAL diffs or specific functions.
+- Skip conversational filler, apologies, and long explanations.
+- If the file is >300 lines, only read/edit the relevant code block using `grep`.
+- Use "Dry run" logic: Describe what you will do in 1 sentence before writing code.
+
+## Coding Standards
+- Use Clean Architecture: Keep Controllers thin, move business logic to Services.
+- Strictly follow ES Modules (`import/export`).
+- DO NOT add duplicate imports. Always check the top of the file first.
+- Maintain a centralized localization system (no hardcoded strings in controllers).
+- Use JSDoc for complex functions to improve IDE intellisense.
+
+## Telegram Bot Specifics
+- Callback Data Limit: Ensure `callback_data` is always <64 bytes. Use short prefixes (e.g., `ap:` for approve).
+- Error Handling: Always wrap `ctx.replyWithPhoto` or DB calls in `try/catch`.
+- Use `ctx.answerCbQuery()` for all callback actions to prevent UI lag.
+- Use `Markup` from `telegraf` for keyboards.
+
+## PostgreSQL / Database
+- Use parameterized queries or a trusted ORM/Query Builder to prevent SQL injection.
+- Always select only necessary columns (avoid `SELECT *`).
+
+## Response Format
+- Output format: [File Path] -> [Code/Diff].
+- Keep responses under 20 lines whenever possible.

@@ -1,0 +1,36 @@
+const listingStates = {
+  IDLE: 'IDLE',
+
+  // New FREE listing flow naming
+  WAITING_CATEGORY: 'WAITING_CATEGORY',
+  WAITING_PHOTOS: 'WAITING_PHOTOS',
+  WAITING_REGION: 'WAITING_REGION',
+  WAITING_DISTRICT: 'WAITING_DISTRICT',
+  WAITING_AREA: 'WAITING_AREA',
+  WAITING_ROOMS: 'WAITING_ROOMS',
+  WAITING_TYPE: 'WAITING_TYPE',
+  WAITING_TOTAL_FLOORS: 'WAITING_TOTAL_FLOORS',
+  WAITING_CURRENT_FLOOR: 'WAITING_CURRENT_FLOOR',
+  WAITING_CONDITION: 'WAITING_CONDITION',
+  WAITING_PRICE: 'WAITING_PRICE',
+  WAITING_PHONE: 'WAITING_PHONE',
+  WAITING_CONFIRM: 'WAITING_CONFIRM'
+};
+
+// Backward-compatible aliases used by current services/controllers.
+listingStates.ADD_HOUSE_TENANT_TYPE = listingStates.WAITING_CATEGORY;
+listingStates.ADD_HOUSE_PHOTOS = listingStates.WAITING_PHOTOS;
+listingStates.ADD_HOUSE_REGION = listingStates.WAITING_REGION;
+listingStates.ADD_HOUSE_DISTRICT = listingStates.WAITING_DISTRICT;
+listingStates.ADD_HOUSE_ADDRESS = listingStates.WAITING_DISTRICT;
+listingStates.ADD_HOUSE_AREA = listingStates.WAITING_AREA;
+listingStates.ADD_HOUSE_ROOMS = listingStates.WAITING_ROOMS;
+listingStates.ADD_HOUSE_TYPE = listingStates.WAITING_TYPE;
+listingStates.ADD_HOUSE_TOTAL_FLOORS = listingStates.WAITING_TOTAL_FLOORS;
+listingStates.ADD_HOUSE_CURRENT_FLOOR = listingStates.WAITING_CURRENT_FLOOR;
+listingStates.ADD_HOUSE_CONDITION = listingStates.WAITING_CONDITION;
+listingStates.ADD_HOUSE_PRICE = listingStates.WAITING_PRICE;
+listingStates.ADD_HOUSE_PHONE = listingStates.WAITING_PHONE;
+listingStates.ADD_HOUSE_CONFIRM = listingStates.WAITING_CONFIRM;
+
+export default listingStates;
